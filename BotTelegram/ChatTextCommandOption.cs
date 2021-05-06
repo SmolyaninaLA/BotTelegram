@@ -11,10 +11,7 @@ namespace BotTelegram
             return message.StartsWith(CommandText);
         }
 
-        public string ClearMessageFromCommand(string message)
-        {
-            return message.Substring(CommandText.Length + 1);
-        }
+        public string ClearMessageFromCommand(string message) => message[(CommandText.Length + 1)..];
 
     }
 }

@@ -88,19 +88,7 @@ namespace BotTelegram
                 parser.StartAddingWord(command, chat);
             }
 
-
-            if (parser.IsShowCommand(command))
-            {
-                chat.IsShowInProcess = true;
-                parser.StartShowDictionary(command, chat);
-            }
-
-            if (parser.IsDeleteCommand(command))
-            {
-                chat.IsDeleteInProcess = true;
-                parser.StartDeleteWord(command, chat);
-            }
-
+       
         }
 
         private string CreateTextMessage()

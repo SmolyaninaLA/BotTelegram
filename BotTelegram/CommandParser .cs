@@ -92,39 +92,7 @@ namespace BotTelegram
 
         }
 
-        public bool IsShowCommand(string message)
-        {
-            var command = Command.Find(x => x.CheckMessage(message));
-
-            return command is ShowDictonaryCommand;
-        }
-
-        public void StartShowDictionary(string message, Conversation chat)
-        {
-            var command = Command.Find(x => x.CheckMessage(message)) as ShowDictonaryCommand;
-
-            addingController.AddFirstState(chat);
-            command.DoAction(chat);
-
-        }
-
-        public bool IsDeleteCommand(string message)
-        {
-            var command = Command.Find(x => x.CheckMessage(message));
-
-            return command is DeleteWordCommand;
-        }
-
-        public void StartDeleteWord(string message, Conversation chat)
-        {
-            var command = Command.Find(x => x.CheckMessage(message)) as DeleteWordCommand;
-
-            addingController.AddFirstState(chat);
-            command.DoAction(chat);
-
-        }
-
-
+       
         public void NextStage(string message, Conversation chat)
         {
             var command = Command.Find(x => x is AddWordCommand) as AddWordCommand;
